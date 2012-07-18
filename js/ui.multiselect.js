@@ -272,7 +272,7 @@ $.widget("ui.multiselect", {
 	},
 	_registerAddEvents: function(elements) {
 		var that = this;
-		elements.click(function() {
+		elements.one("click", function () {
 			var item = that._setSelected($(this).parent(), true);
 			that.count += 1;
 			that._updateCount();
@@ -298,7 +298,7 @@ $.widget("ui.multiselect", {
 	},
 	_registerRemoveEvents: function(elements) {
 		var that = this;
-		elements.click(function() {
+		elements.one("click", function () {
 			that._setSelected($(this).parent(), false);
 			that.count -= 1;
 			that._updateCount();
